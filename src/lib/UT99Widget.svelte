@@ -63,7 +63,7 @@
 
 <div>
   <label for="speed">Speed</label>
-  <input type="number" id="speed" bind:value={speed} />
+  <input type="number" id="speed" step="0.5" bind:value={speed} />
 </div>
 
 <div>
