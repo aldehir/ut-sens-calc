@@ -22,7 +22,7 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/ut-sens-calc'
+          BASE_PATH: '/'
         run: |
           npm run build
           touch build/.nojekyll
