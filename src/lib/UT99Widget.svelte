@@ -6,7 +6,7 @@
   export let cm360;
 
   let fov = 90;
-  let speed = 1.0;
+  let speed = 6.0;
   let sensitivity = 1.0;
   let zoomSens = 0.8;
   let zoomCm360;
