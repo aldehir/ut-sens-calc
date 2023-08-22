@@ -7,10 +7,6 @@
   let cm360 = 37;
 </script>
 
-<svelte:head>
-  <title>UT Sensitivity Calculator</title>
-</svelte:head>
-
 <h1>UT Sensitivity Calculator</h1>
 
 <UT4Widget bind:dpi={dpi} bind:cm360={cm360} />
