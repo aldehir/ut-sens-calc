@@ -34,6 +34,13 @@
 
 <h2>UT2k4</h2>
 
+<p>You can find your mouse speed by opening your <tt>User.ini</tt> and searching for
+the <tt>MouseX=</tt> option. Here is an example:</p>
+
+<pre>
+MouseX=Count bXAxis | Axis aMouseX Speed=2
+</pre>
+
 <div>
   <label for="dpi">DPI</label>
   <input type="number" id="dpi" bind:value={dpi} />
