@@ -31,21 +31,21 @@
 
   function computeZoom() {
     zoomDebouncer.debounce(() => {
-      zoomSens = calcSens(dpi, fov, speed, sensitivity, 1.0) / zoomCm360;
+      zoomSens = cm360 / zoomCm360;
     });
   }
 
   function computeZoomCm360() {
     zoomDebouncer.debounce(() => {
-      zoomCm360 = calcSens(dpi, fov, speed, sensitivity, zoomSens);
+      zoomCm360 = cm360 / zoomSens;
     });
   }
 
   $: dpi, fov, speed, cm360, computeSensitivity();
   $: sensitivity, computeCm360();
 
-  $: zoomSens, computeZoomCm360();
-  $: zoomCm360, computeZoom();
+  $: cm360, zoomSens, computeZoomCm360();
+  $: cm360, zoomCm360, computeZoom();
 </script>
 
 <h2>UT99</h2>
