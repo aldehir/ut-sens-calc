@@ -12,7 +12,9 @@
   export let precision = 0;
   export let step = 1;
   export let value = 1.0;
-  export let error = false;
+
+  let error = false;
+  let updating = 0;
 
   let element: HTMLInputElement;
   let debouncer = new Debouncer();
@@ -39,6 +41,11 @@
     if (element) {
       debouncer.debounce(() => {
         element.value = value.toFixed(precision);
+
+        updating++;
+        setTimeout(() => {
+          updating--;
+        }, 250);
       });
     }
   }
@@ -46,7 +53,7 @@
   $: onValueUpdate(value);
 </script>
 
-<div class="numeric-input" class:error>
+<div class="numeric-input" class:error class:updating>
   <label for={inputId}>{label}</label>
   <input bind:this={element} id={inputId} {step} type="number" on:input={onInput} />
 </div>
@@ -65,11 +72,20 @@
 
     background: var(--color-primary-650);
     border: 1px solid var(--color-primary-600);
+
+    transition: background 500ms ease-out, border 500ms ease-out;
   }
 
   div.error {
     background: var(--color-error-700);
     border: 1px solid var(--color-error-600);
+  }
+
+  div.updating {
+    background: var(--color-update-650);
+    border: 1px solid var(--color-update-600);
+
+    transition: none;
   }
 
   label {
