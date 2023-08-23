@@ -1,5 +1,8 @@
 <script lang="ts">
+  import '$lib/styles/panel.scss';
+
   import { Debouncer } from '$lib/util';
+  import NumericInput from '$lib/NumericInput.svelte';
 
   const yawIncrement = 0.07027132539528;
 
@@ -32,38 +35,19 @@
   $: sensitivity, computeCm360();
 </script>
 
-<h2>UT2k4</h2>
+<div class="panel">
+  <h2>UT2k4</h2>
 
-<p>
-  You can find your mouse speed by opening your <tt>User.ini</tt> and searching for the
-  <tt>MouseX=</tt> option. Here is an example:
-</p>
+  <div class="fields">
+    <div class="column">
+      <NumericInput label="DPI" bind:value={dpi} step={100} />
+      <NumericInput label="FOV" bind:value={fov} />
+      <NumericInput label="SPEED" bind:value={speed} step={0.5} />
+    </div>
 
-<pre>
-MouseX=Count bXAxis | Axis aMouseX Speed=2
-</pre>
-
-<div>
-  <label for="dpi">DPI</label>
-  <input type="number" id="dpi" bind:value={dpi} />
-</div>
-
-<div>
-  <label for="fov">FOV</label>
-  <input type="number" id="fov" bind:value={fov} />
-</div>
-
-<div>
-  <label for="speed">Speed</label>
-  <input type="number" id="speed" step="0.5" bind:value={speed} />
-</div>
-
-<div>
-  <label for="sensitivity">Sensitivity</label>
-  <input type="number" id="sensitivity" bind:value={sensitivity} />
-</div>
-
-<div>
-  <label for="cm360">cm/360</label>
-  <input type="number" id="cm360" bind:value={cm360} />
+    <div class="column">
+      <NumericInput label="SENS" bind:value={sensitivity} step={0.1} precision={3} />
+      <NumericInput label="CM/360" bind:value={cm360} step={0.1} precision={3} />
+    </div>
+  </div>
 </div>

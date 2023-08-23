@@ -1,4 +1,6 @@
 <script lang="ts">
+  import '$lib/styles/panel.scss';
+
   import type { PageData } from './$types';
 
   import UT4Widget from '$lib/UT4Widget.svelte';
@@ -19,14 +21,14 @@
   let ut99ZoomSens = Settings.persist(Settings.UT99_ZOOM_SENSITIVITY, data.ut99.zoomSensitivity);
 </script>
 
-<h1>UT Sensitivity Calculator</h1>
-
-<UT4Widget bind:dpi={$dpi} bind:cm360={$cm360} bind:fov={$ut4Fov} />
-<UT2k4Widget bind:dpi={$dpi} bind:cm360={$cm360} bind:fov={$ut2k4Fov} bind:speed={$ut2k4Speed} />
-<UT99Widget
-  bind:dpi={$dpi}
-  bind:cm360={$cm360}
-  bind:fov={$ut99Fov}
-  bind:speed={$ut99Speed}
-  bind:zoomSens={$ut99ZoomSens}
-/>
+<div class="panels">
+  <UT4Widget bind:dpi={$dpi} bind:cm360={$cm360} bind:fov={$ut4Fov} />
+  <UT2k4Widget bind:dpi={$dpi} bind:cm360={$cm360} bind:fov={$ut2k4Fov} bind:speed={$ut2k4Speed} />
+  <UT99Widget
+    bind:dpi={$dpi}
+    bind:cm360={$cm360}
+    bind:fov={$ut99Fov}
+    bind:speed={$ut99Speed}
+    bind:zoomSens={$ut99ZoomSens}
+  />
+</div>

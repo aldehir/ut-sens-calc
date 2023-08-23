@@ -1,5 +1,8 @@
 <script lang="ts">
+  import '$lib/styles/panel.scss';
+
   import { Debouncer } from '$lib/util';
+  import NumericInput from '$lib/NumericInput.svelte';
 
   export let dpi = 800;
   export let cm360 = 37;
@@ -48,48 +51,24 @@
   $: cm360, zoomCm360, computeZoom();
 </script>
 
-<h2>UT99</h2>
+<div class="panel">
+  <h2>UT99</h2>
 
-<p>
-  You can find your mouse speed by opening your <tt>User.ini</tt> and searching for the
-  <tt>MouseX=</tt> option. Here is an example:
-</p>
+  <div class="fields">
+    <div class="column">
+      <NumericInput label="DPI" bind:value={dpi} step={100} />
+      <NumericInput label="FOV" bind:value={fov} />
+      <NumericInput label="SPEED" bind:value={speed} step={0.5} />
+    </div>
 
-<pre>
-MouseX=Axis aMouseX Speed=6
-</pre>
+    <div class="column">
+      <NumericInput label="SENS" bind:value={sensitivity} precision={3} step={0.1} />
+      <NumericInput label="CM/360" bind:value={cm360} precision={3} step={0.1} />
 
-<div>
-  <label for="dpi">DPI</label>
-  <input type="number" id="dpi" bind:value={dpi} />
-</div>
+      <h3>zoom</h3>
 
-<div>
-  <label for="fov">FOV</label>
-  <input type="number" id="fov" bind:value={fov} />
-</div>
-
-<div>
-  <label for="speed">Speed</label>
-  <input type="number" id="speed" step="0.5" bind:value={speed} />
-</div>
-
-<div>
-  <label for="sensitivity">Sensitivity</label>
-  <input type="number" id="sensitivity" bind:value={sensitivity} />
-</div>
-
-<div>
-  <label for="cm360">cm/360</label>
-  <input type="number" id="cm360" bind:value={cm360} />
-</div>
-
-<div>
-  <label for="zoom">Zoom</label>
-  <input type="number" id="zoom" bind:value={zoomSens} />
-</div>
-
-<div>
-  <label for="zoomcm360">Zoom cm/360</label>
-  <input type="number" id="zoomcm360" bind:value={zoomCm360} />
+      <NumericInput label="SENS" bind:value={zoomSens} precision={3} step={0.1} />
+      <NumericInput label="CM/360" bind:value={zoomCm360} precision={3} step={0.1} />
+    </div>
+  </div>
 </div>

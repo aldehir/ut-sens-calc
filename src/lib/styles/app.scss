@@ -1,0 +1,19 @@
+:root {
+  --color-primary-750: hsl(210 7% 18%);
+  --color-primary-700: hsl(212 8% 21%);
+  --color-primary-650: hsl(212 9% 24%);
+  --color-primary-600: hsl(212 7% 33%);
+  --color-primary-300: hsl(212 8% 60%);
+  --color-primary-200: hsl(212 8% 80%);
+  --color-primary-100: hsl(212 10% 95%);
+
+  --color-error-700: hsl(0 26% 20%);
+  --color-error-600: hsl(0 35% 32%);
+
+  --font-primary: 'IBM Plex Mono', Arial, sans-serif;
+}
+
+body {
+  font: 16px var(--font-primary);
+  background: var(--color-primary-750);
+}
