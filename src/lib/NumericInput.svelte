@@ -41,7 +41,7 @@
     if (element) {
       debouncer.debounce(() => {
         element.value = value.toFixed(precision);
-        error = false;  // Reset error flag
+        error = false; // Reset error flag
 
         updating++;
         setTimeout(() => {
@@ -56,7 +56,14 @@
 
 <div class="numeric-input" class:error class:updating>
   <label for={inputId}>{label}</label>
-  <input inputmode="decimal" bind:this={element} id={inputId} {step} type="number" on:input={onInput} />
+  <input
+    inputmode="decimal"
+    bind:this={element}
+    id={inputId}
+    {step}
+    type="number"
+    on:input={onInput}
+  />
 </div>
 
 <style lang="scss">
