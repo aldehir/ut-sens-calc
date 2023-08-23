@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Debouncer, validValues } from '$lib/util';
+  import { Debouncer } from '$lib/util';
 
   const yawIncrement = 0.07027132539528;
 

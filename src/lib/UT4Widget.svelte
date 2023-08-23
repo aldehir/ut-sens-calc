@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Debouncer, validValues } from '$lib/util';
+  import { Debouncer } from '$lib/util';
 
   export let dpi: number = 800;
   export let cm360: number = 37;

@@ -1,7 +1,3 @@
-export function validValues(values) {
-  return values.every((x) => x > 0 && !Number.isNaN(x) && x !== null);
-}
-
 export class Debouncer {
   count: number;
 
