@@ -41,6 +41,7 @@
     if (element) {
       debouncer.debounce(() => {
         element.value = value.toFixed(precision);
+        error = false;  // Reset error flag
 
         updating++;
         setTimeout(() => {
