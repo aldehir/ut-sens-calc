@@ -42,7 +42,7 @@
     <div class="column">
       <NumericInput label="DPI" bind:value={dpi} step={100} />
       <NumericInput label="FOV" bind:value={fov} />
-      <NumericInput label="SPEED" bind:value={speed} step={0.5} />
+      <NumericInput label="SPEED" bind:value={speed} step={0.5} precision={1} />
     </div>
 
     <div class="column">
