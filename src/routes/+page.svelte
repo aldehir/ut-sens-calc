@@ -9,6 +9,6 @@
 
 <h1>UT Sensitivity Calculator</h1>
 
-<UT4Widget bind:dpi={dpi} bind:cm360={cm360} />
-<UT2k4Widget bind:dpi={dpi} bind:cm360={cm360} />
-<UT99Widget bind:dpi={dpi} bind:cm360={cm360} />
+<UT4Widget bind:dpi bind:cm360 />
+<UT2k4Widget bind:dpi bind:cm360 />
+<UT99Widget bind:dpi bind:cm360 />

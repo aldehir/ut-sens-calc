@@ -13,7 +13,7 @@
   let debouncer = new Debouncer();
 
   function calcSens(dpi: number, fov: number, speed: number, sens: number) {
-    return (360.0 * 2.54) / (yawIncrement * (speed/2.0) * dpi * 0.01111 * fov * sens);
+    return (360.0 * 2.54) / (yawIncrement * (speed / 2.0) * dpi * 0.01111 * fov * sens);
   }
 
   function computeSensitivity() {
@@ -34,8 +34,10 @@
 
 <h2>UT2k4</h2>
 
-<p>You can find your mouse speed by opening your <tt>User.ini</tt> and searching for
-the <tt>MouseX=</tt> option. Here is an example:</p>
+<p>
+  You can find your mouse speed by opening your <tt>User.ini</tt> and searching for the
+  <tt>MouseX=</tt> option. Here is an example:
+</p>
 
 <pre>
 MouseX=Count bXAxis | Axis aMouseX Speed=2

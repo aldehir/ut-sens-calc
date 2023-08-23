@@ -50,8 +50,10 @@
 
 <h2>UT99</h2>
 
-<p>You can find your mouse speed by opening your <tt>User.ini</tt> and searching for
-the <tt>MouseX=</tt> option. Here is an example:</p>
+<p>
+  You can find your mouse speed by opening your <tt>User.ini</tt> and searching for the
+  <tt>MouseX=</tt> option. Here is an example:
+</p>
 
 <pre>
 MouseX=Axis aMouseX Speed=6

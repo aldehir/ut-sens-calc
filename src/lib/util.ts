@@ -10,6 +10,8 @@ export class Debouncer {
 
     this.count--;
     fn();
-    setTimeout(() => { this.count++; }, 0);
+    setTimeout(() => {
+      this.count++;
+    }, 0);
   }
-};
+}
