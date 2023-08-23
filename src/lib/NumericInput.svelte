@@ -56,7 +56,7 @@
 
 <div class="numeric-input" class:error class:updating>
   <label for={inputId}>{label}</label>
-  <input bind:this={element} id={inputId} {step} type="number" on:input={onInput} />
+  <input inputmode="decimal" bind:this={element} id={inputId} {step} type="number" on:input={onInput} />
 </div>
 
 <style lang="scss">
@@ -121,7 +121,8 @@
 
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
-    --webkit-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
     margin: 0;
   }
 </style>
