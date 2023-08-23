@@ -1,15 +1,15 @@
-<script>
-  import { Debouncer, validValues } from '$lib/util.ts';
+<script lang="ts">
+  import { Debouncer, validValues } from '$lib/util';
 
-  export let dpi;
-  export let cm360;
+  export let dpi: number = 800;
+  export let cm360: number = 37;
 
-  let fov = 100;
-  let sensitivity = 1.0;
+  let fov: number = 100;
+  let sensitivity: number = 1.0;
 
   let debouncer = new Debouncer();
 
-  function calcSens(dpi, fov, sens) {
+  function calcSens(dpi: number, fov: number, sens: number) {
     return (360.0 * 2.54) / (0.01 * 0.02222 * dpi * fov * sens);
   }
 
@@ -25,8 +25,8 @@
     });
   }
 
-  $: computeSensitivity(dpi, fov, cm360);
-  $: computeCm360(sensitivity);
+  $: dpi, fov, cm360, computeSensitivity();
+  $: sensitivity, computeCm360();
 </script>
 
 <h2>UT4</h2>

@@ -1,18 +1,18 @@
-<script>
-  import { Debouncer, validValues } from '$lib/util.ts';
+<script lang="ts">
+  import { Debouncer, validValues } from '$lib/util';
 
   const yawIncrement = 0.07027132539528;
 
-  export let dpi;
-  export let cm360;
+  export let dpi: number = 800;
+  export let cm360: number = 37;
 
-  let fov = 90;
-  let speed = 2.0;
-  let sensitivity = 1.0;
+  let fov: number = 90;
+  let speed: number = 2.0;
+  let sensitivity: number = 1.0;
 
   let debouncer = new Debouncer();
 
-  function calcSens(dpi, fov, speed, sens) {
+  function calcSens(dpi: number, fov: number, speed: number, sens: number) {
     return (360.0 * 2.54) / (yawIncrement * (speed/2.0) * dpi * 0.01111 * fov * sens);
   }
 
@@ -28,8 +28,8 @@
     });
   }
 
-  $: computeSensitivity(dpi, fov, speed, cm360);
-  $: computeCm360(sensitivity);
+  $: dpi, fov, speed, cm360, computeSensitivity();
+  $: sensitivity, computeCm360();
 </script>
 
 <h2>UT2k4</h2>

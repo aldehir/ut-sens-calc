@@ -1,20 +1,20 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
-  import { Debouncer, validValues } from '$lib/util.ts';
+  import { Debouncer, validValues } from '$lib/util';
 
-  export let dpi;
-  export let cm360;
+  export let dpi: number = 800;
+  export let cm360: number = 37;
 
-  let fov = 90;
-  let speed = 6.0;
-  let sensitivity = 1.0;
-  let zoomSens = 0.8;
-  let zoomCm360;
+  let fov: number = 90;
+  let speed: number = 6.0;
+  let sensitivity: number = 1.0;
+  let zoomSens: number = 0.8;
+  let zoomCm360: number;
 
   let debouncer = new Debouncer();
   let zoomDebouncer = new Debouncer();
 
-  function calcSens(dpi, fov, speed, sens, zoom) {
+  function calcSens(dpi: number, fov: number, speed: number, sens: number, zoom: number) {
     return (65536 * 2.54) / (32 * 0.2 * 0.24 * 0.01111 * fov * dpi * sens * speed * zoom);
   }
 
@@ -42,11 +42,11 @@
     });
   }
 
-  $: computeSensitivity(dpi, fov, speed, cm360);
-  $: computeCm360(sensitivity);
+  $: dpi, fov, speed, cm360, computeSensitivity();
+  $: sensitivity, computeCm360();
 
-  $: computeZoomCm360(zoomSens);
-  $: computeZoom(zoomCm360);
+  $: zoomSens, computeZoomCm360();
+  $: zoomCm360, computeZoom();
 </script>
 
 <h2>UT99</h2>
