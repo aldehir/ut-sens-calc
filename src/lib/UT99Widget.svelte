@@ -1,13 +1,13 @@
 <script lang="ts">
   import { Debouncer } from '$lib/util';
 
-  export let dpi: number = 800;
-  export let cm360: number = 37;
+  export let dpi = 800;
+  export let cm360 = 37;
 
-  let fov: number = 90;
-  let speed: number = 6.0;
-  let sensitivity: number = 1.0;
-  let zoomSens: number = 0.8;
+  let fov = 90;
+  let speed = 6.0;
+  let sensitivity = 1.0;
+  let zoomSens = 0.8;
   let zoomCm360: number;
 
   let debouncer = new Debouncer();
