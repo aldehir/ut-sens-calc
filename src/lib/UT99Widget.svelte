@@ -3,11 +3,11 @@
 
   export let dpi = 800;
   export let cm360 = 37;
+  export let fov = 90;
+  export let speed = 6.0;
+  export let zoomSens = 0.8;
 
-  let fov = 90;
-  let speed = 6.0;
   let sensitivity = 1.0;
-  let zoomSens = 0.8;
   let zoomCm360: number;
 
   let debouncer = new Debouncer();

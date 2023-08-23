@@ -3,8 +3,8 @@
 
   export let dpi = 800;
   export let cm360 = 37;
+  export let fov = 100;
 
-  let fov = 100;
   let sensitivity = 1.0;
 
   let debouncer = new Debouncer();
